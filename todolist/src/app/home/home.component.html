@@ -1,0 +1,103 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand">Toodo List</a> 
+        <div class="d-flex" >
+            <form  class="d-flex">
+               
+            </form>
+            
+        </div>
+        
+    </div>
+    </nav>
+<div class="container">
+
+    <mat-card class="header">
+        <mat-card-header>
+            <h2 class="header">ToDo List </h2>
+        </mat-card-header>
+        <div class="cont">
+            <mat-card-content>
+                <form class="example-form" [formGroup]="formData">
+                    <div class="form">
+                        <div class="inp">
+                            
+                               
+                                <input class="form-control me-2" placeholder="Enter Task Name"  name="taskName" formControlName="task" >
+                            
+                        </div>
+                        <div class="div-btn">
+                            <button *ngIf="showSave" mat-button class="btn-save" (click)="add()">Save</button>
+                            <button *ngIf="showEdit" mat-button class="btn-save" (click)="editCnf()">Edit</button>
+                        </div>
+                    </div>
+                </form>
+
+            </mat-card-content>
+        </div>
+    </mat-card>
+
+
+    <div class="data">
+        <h2 class="data-head"> Uncompleted tasks </h2>
+        <table class="table">
+            <tr *ngFor="let data of array">
+                <div *ngIf="!data.completed" class="table-data">
+                    <div class="taskdata">
+
+                        <th class="div-data">{{data.taskName}}</th>
+                    </div>
+                    <div class="task-btn">
+                        <div class="btn-div">
+                            <th><button class="sm-btn" (click)="editTask(data._id)"><fa-icon
+                                        [icon]="edit"></fa-icon></button>
+                            </th>
+                        </div>
+                        <div class="btn-div">
+                            <th><button class="sm-btn" (click)="deleteTask(data._id)"><fa-icon
+                                        [icon]="delet"></fa-icon></button></th>
+                        </div>
+                        <div class="btn-div">
+                            <th><button class="sm-btn" (click)="chechTask(data._id)"><fa-icon
+                                        [icon]="check"></fa-icon></button></th>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        </table>
+    </div>
+    <div class="data">
+        <h2 class="data-head">Completed tasks</h2>
+        <table class="table">
+            <tr *ngFor="let data of array">
+                <div *ngIf="data.completed" class="table-data">
+                    <div class="taskdata">
+                        <th class="text-dec">{{data.taskName}}</th>
+                    </div>
+                    <div class="task-btn">
+                        <div class="btn-div">
+                            <th><button class="sm-btn" (click)="editTask(data)"><fa-icon
+                                        [icon]="edit"></fa-icon></button></th>
+                        </div>
+                        <div class="btn-div">
+                            <th><button class="sm-btn" (click)="deleteTask(data._id)"><fa-icon
+                                        [icon]="delet"></fa-icon></button></th>
+
+                        </div>
+                        <div class="btn-div">
+                            <th><button class="sm-btn" (click)="unCheckTask(data._id)"><fa-icon
+                                        [icon]="checkCircle"></fa-icon></button></th>
+
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+

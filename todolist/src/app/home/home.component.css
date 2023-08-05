@@ -1,0 +1,177 @@
+
+.wdt100{
+    width: 30vw;
+}
+
+.header{
+    margin: auto;
+    font-size: 40px;
+    color: #0e0108;
+}
+.container{
+border: 2px solid black;
+width: 40vw;
+margin: auto;
+
+/* box-shadow: 10px 10px rgb(201, 194, 194); */
+
+}
+.header{
+    background-color: transparent;
+}
+.btn-save{
+    margin-left:5px ;
+    background-color:white;
+    color: green;
+    font-size: 20px;
+    border:2px solid green;
+    border-radius: 7px;
+}
+.btn-save:hover{
+    background-color: green;
+    border:2px solid green;
+    color: white;
+}
+
+.form{
+    display: flex;
+    margin: auto;
+}
+.cont{
+    margin: auto;
+}
+.inp{
+    width: 30vw;
+}
+.div-btn{
+    width: 9vw;
+    padding-top: 0px;
+}
+.data{
+    width: 35vw;
+    /* margin: auto; */
+    margin-left: 15px;
+    border: 2px solid grey;
+    padding-bottom: 20px;
+}
+.table{
+    margin: auto;
+}
+.table-data{
+    display: flex;
+    width: 34vw;
+    padding-left: 2vw;
+   
+}
+.taskdata{
+    
+    width: 20vw;
+    text-overflow: ellipsis;
+    
+}
+.task-btn{
+    display: flex;
+}
+.btn-div{
+    border: none;
+}
+.sm-btn{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.sm-btn:hover{
+    background-color: aquamarine;
+   
+}
+.data-head{
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(36 142 183);
+    color: #131614;
+    
+}
+.inpt{
+    width: 35vw;
+    height: 25px;
+}
+table th{
+    color:  rgb(18, 17, 17);
+    font-size: 18px;
+    margin-left:10px ;
+    text-overflow: ellipsis;
+    text-shadow: rgb(52, 167, 146) 1px 0 10px;
+    background-color: transparent;
+    font-family: 'Geologica', sans-serif;
+}
+table tr{
+   
+    margin: 5px 0px;
+    background-color:transparent;
+    
+}
+.bgc{
+    background-color: transparent;
+}
+
+
+@media screen and (max-width:900px) and (min-width:745px){
+
+    .container{
+        width: 60vw;
+    }
+    .data{
+        width: 50vw;
+    }
+    .table-data{
+        width:49vw ;
+    }
+    .taskdata{
+        width: 35vw;
+       
+    }
+    .text-dec{
+        text-overflow: clip;
+        width:34vw ;
+    }
+}
+
+@media screen and (max-width:745px) and (min-width:10px){
+
+    .container{
+        width: 80vw;
+        margin: auto;
+        position: relative;
+    }
+    .data{
+        width: 70vw;
+    }
+    .table-data{
+        width:69vw ;
+    }
+    .taskdata{
+        width: 55vw;
+        flex-direction: column;
+       
+    }
+   .task-btn{
+    display: flex;
+    /* flex-direction: column; */
+    
+   }
+   .form{
+    /* flex-direction: column; */
+    width: 75;
+   }
+   wdt100{
+    width: 90vw;
+   }
+   .inp{
+    width: 40vw;
+    border: 2px solid grey;
+   }
+   .width-inp{
+    width: 90vw;
+   }
+}
+
