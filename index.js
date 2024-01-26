@@ -13,7 +13,7 @@ const distributorRoute=require('./route/distributorRoute');
 const {getCsv,getPDF}=require('./export')
 
 const app = express();
-connectToDB();
+connectToDB()
 app.use(cors()); 
 // Use bodyParser with extended true
 app.use(bodyParser.json({ extended: true }));

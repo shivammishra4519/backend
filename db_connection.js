@@ -1,20 +1,21 @@
-
 const { MongoClient } = require('mongodb');
-require('dotenv').config()
-const url=process.env.mongoURL;
-// const url="mongodb://127.0.0.1/?directConnection=true"
+require('dotenv').config();
 
+const url = process.env.MONGODB_URI;
 
 let db = null;
 
 async function connectToDB() {
   try {
-    const client = await MongoClient.connect(  url);
+    console.log('MongoDB Connection String:', url);
 
+    const client = await MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
     db = client.db('mobilefind');
     console.log('Connected to the database');
   } catch (error) {
     console.error('Failed to connect to the database:', error);
+    // Rethrow the error to propagate it
+    throw error;
   }
 }
 
