@@ -13,6 +13,7 @@ const distributorRoute=require('./route/distributorRoute');
 const {getCsv,getPDF}=require('./export')
 
 const app = express();
+connectToDB();
 app.use(cors()); 
 // Use bodyParser with extended true
 app.use(bodyParser.json({ extended: true }));
@@ -25,7 +26,7 @@ app.use('/admin',userCountRoute);
 app.use('/distributor',distributorRoute);
 app.get('/api/download',getCsv)
 app.get('/api/pdf',getPDF)
-connectToDB();
+
 app.get('', (req, res) => {
     res.send("hello");
 });
