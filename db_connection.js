@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 require('dotenv').config();
 
 const url = process.env.MONGODB_URI;
@@ -9,7 +9,13 @@ async function connectToDB() {
   try {
     console.log('MongoDB Connection String:', url);
 
-    const client = await MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(url, {
+      serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+      }
+    });
     db = client.db('mobilefind');
     console.log('Connected to the database');
   } catch (error) {
