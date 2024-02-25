@@ -10,6 +10,7 @@ const adddevice=require('./route/addDeviceRoute');
 const paymentRoute=require('./route/paymentRoute');
 const userCountRoute=require('./route/userCountRoute');
 const distributorRoute=require('./route/distributorRoute');
+const filter=require('./route/filterRoute')
 const {getCsv,getPDF}=require('./export')
 
 const app = express();
@@ -26,6 +27,7 @@ app.use('/admin',userCountRoute);
 app.use('/distributor',distributorRoute);
 app.get('/api/download',getCsv)
 app.get('/api/pdf',getPDF)
+app.use('/api',filter);
 
 app.get('', (req, res) => {
     res.send("hello");
