@@ -3,15 +3,15 @@ const { connectToDB } = require('./db_connection.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const userRoute = require('./route/user');
-const adminRoute = require('./route/adminRoute');
-const loginRoute = require('./route/loginRoute');
-const addDeviceRoute = require('./route/addDeviceRoute');
-const paymentRoute = require('./route/paymentRoute');
-const userCountRoute = require('./route/userCountRoute');
-const distributorRoute = require('./route/distributorRoute');
-const filterRoute = require('./route/filterRoute');
-const { getCsv, getPDF } = require('./export');
+const userRoute = require('./route/user.js');
+const adminRoute = require('./route/adminRoute.js');
+const loginRoute = require('./route/loginRoute.js');
+const addDeviceRoute = require('./route/addDeviceRoute.js');
+const paymentRoute = require('./route/paymentRoute.js');
+const userCountRoute = require('./route/userCountRoute.js');
+const distributorRoute = require('./route/distributorRoute.js');
+const filterRoute = require('./route/filterRoute.js');
+const { getCsv, getPDF } = require('./export.js');
 const logger = require('winston');
 
 // Load environment variables from .env file
