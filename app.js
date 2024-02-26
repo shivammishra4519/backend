@@ -12,7 +12,7 @@ const userCountRoute = require('./route/userCountRoute.js');
 const distributorRoute = require('./route/distributorRoute.js');
 const filterRoute = require('./route/filterRoute.js');
 const { getCsv, getPDF } = require('./export.js');
-const logger = require('winston');
+
 
 // Load environment variables from .env file
 dotenv.config();
