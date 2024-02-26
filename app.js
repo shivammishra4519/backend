@@ -1,18 +1,18 @@
 const express = require('express');
-const { connectToDB } = require('./db_connection');
+const { connectToDB } = require('./db_connection.js');
 const bodyParser = require('body-parser');
-const userRoute = require('./route/user');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const userRoute = require('./route/user');
 const adminRoute = require('./route/adminRoute');
-const login = require('./route/loginRoute');
-const adddevice = require('./route/addDeviceRoute');
+const loginRoute = require('./route/loginRoute');
+const addDeviceRoute = require('./route/addDeviceRoute');
 const paymentRoute = require('./route/paymentRoute');
 const userCountRoute = require('./route/userCountRoute');
 const distributorRoute = require('./route/distributorRoute');
-const filter = require('./route/filterRoute');
+const filterRoute = require('./route/filterRoute');
 const { getCsv, getPDF } = require('./export');
-const logger = require('winston'); // Assuming you'll use Winston for logging
+const logger = require('winston');
 
 // Load environment variables from .env file
 dotenv.config();
@@ -32,17 +32,17 @@ app.use(bodyParser.json({ extended: true }));
 // Define routes
 app.use('/user', userRoute);
 app.use('/admin', adminRoute);
-app.use('/api', login);
-app.use('/api/', adddevice);
-app.use('/api/', paymentRoute);
+app.use('/api', loginRoute);
+app.use('/api', addDeviceRoute);
+app.use('/api', paymentRoute);
 app.use('/admin', userCountRoute);
 app.use('/distributor', distributorRoute);
+app.use('/api', filterRoute);
 app.get('/api/download', getCsv);
 app.get('/api/pdf', getPDF);
-app.use('/api', filter);
 
 // Define a default route
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     res.send("Hello, this is your Node.js application!");
 });
 
