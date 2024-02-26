@@ -7,8 +7,6 @@ let db = null;
 
 async function connectToDB() {
   try {
-    console.log('MongoDB Connection String:', url);
-
     const client = new MongoClient(url, {
       serverApi: {
         version: ServerApiVersion.v1,
